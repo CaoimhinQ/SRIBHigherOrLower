@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SRIB</title>
+<script src="js/srib.js"></script>
+<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body onload="loadPlayers()">
+	<div id="logo">
+	</div>
+
+	<div id="heading">
+		<h1>SRIB</h1>
+		<hr>
+	</div>
+
+	<div id="mainbody">
+	<h2>SRIB</h2>
+	
+	<p> Welcome to SRIB higher or Lower</p>
+	
+	
+	<center><div id="gameDiv">
+	<div>
+	<label for="category">Category</label>
+	<select id="category" onChange="categoryChanged()">
+		<option  onSelect="categoryChanged()" value="intGoals">International Goals</option>
+		<option  onSelect="categoryChanged()" value="intApps">International Appearances</option>
+		<option  onSelect="categoryChanged()" value="clubGoals">Club Goals</option>
+		<option  onSelect="categoryChanged()" value="clubApps">Club Appearances</option>
+	</select>
+	<br>
+	</div>
+	<br>
+	<div id="p1Div">
+	<br>
+	<label for="name1">Name</label>
+	<input id="name1" type="text" readonly>
+	<br>
+	<label id="stat1lbl" for="stat1">International Goals</label>
+	<input id="stat1" type="number" readonly>
+	</div>
+	<br>
+	<div id="p2Div">
+	<label for="name2">Name</label>
+	<input id="name2" type="text" readonly>
+	<br>
+	<label id="stat2lbl" for="stat2">International Goals</label>
+	<input id="stat2" type="number" readonly>
+	<br><br>
+	</div>
+	
+	<br><br><br>
+	
+	
+	<label for="play"></label>		
+	<input class="button" type="button" name="play" onclick="loadPlayers()" value="Next" size="20">
+	<br>
+	
+	<label for="higher"></label>		
+	<input class="button" type="button" id = "higher" name="higher" onclick="compute(1)" value="Higher" size="20">
+	
+	<label for="lower"></label>		
+	<input class="button" type="button" id = "lower" name="lower" onclick="compute(2)" value="Lower" size="20">
+	
+	</div></center>
+	
+	<br><br><br><br>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<label for="submit"></label>		
+	<input class="button" type="button" name="submit" onclick="getAllPlayers()" value="Get All Players" size="20">
+	<p id="players"></p>
+	
+	<label for="count"></label>		
+	<input class="button" type="button" name="count" onclick="getPlayerCount()" value="Get Player Count" size="20">
+	<p id="count"></p>
+	
+	<label for="player"></label>		
+	<input class="button" type="button" name="player" onclick="getPlayer()" value="Get first Player" size="20">
+	<p id="player"></p>
+	
+	</div>
+</body>
+</html>

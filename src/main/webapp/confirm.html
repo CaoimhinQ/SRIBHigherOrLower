@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+		function logout() {
+			sessionStorage.removeItem("userName");
+			sessionStorage.removeItem("userType");
+			window.location.replace("./index.html");
+		}		
+</script>
+<meta charset="UTF-8">
+<title>Registered</title>
+<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body>
+	<div id="logo">
+	</div>
+
+	<div id="heading">
+		<h1>You are Registered</h1>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="logout(); window.location.replace('index.html'); return false;">Logout</a></li>
+		</ul>
+	</div>
+
+	<div id="mainbody">
+		<form action="index.html">
+			<label>You have registered successfully</label><br><br>
+			<input type="submit" value="Continue" size="20" />
+		</form>
+	</div>
+</body>
+</html>

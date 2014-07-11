@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script>
+		function checkUser() {
+			var currentUserType = sessionStorage.getItem("userType");
+			
+			if(currentUserType != "sysAdmin") { 
+				location.replace("wrongUser.html");
+				} else {
+				}
+			}
+
+		function logout() {
+			sessionStorage.removeItem("userName");
+			sessionStorage.removeItem("userType");
+			window.location.replace("./index.html");
+		}		
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Register User</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/loginandregister.js"></script>
+</head>
+<body> <!-- onload="checkUser()" -->
+	<div id="logo">
+		<img src="Ericsson.png">
+	</div>
+
+	<div id="heading">
+		<h1>Create New User Page</h1>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="window.location.replace(sessionStorage.getItem('userType') + 'Home.html'); return false;">Home</a></li>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="logout(); window.location.replace('index.html'); return false;">Logout</a></li>
+			<li><a class="menulinks" href="sysAdminHome.html">Back</a></li>
+		</ul>
+	</div>
+
+	<div id="mainbody">
+		<form name="userForm">
+			<fieldset>
+				<label for="username">Username:</label> 
+				<input type="text" name="username" size="27" maxlength="45" id="uname"> 
+				<label for="password">Password:</label> 
+				<input type="password" name="password" size="27" maxlength="45" id="pword"> 
+				<label for="type">User Type:</label> <select name="type" id="utype">
+					<option value="sysAdmin">System Administrator</option>
+					<option value="networkEng">Network Management Engineer</option>
+					<option value="customerServiceRep">Customer Service Rep</option>
+					<option value="supportEng">Support Engineer</option>
+				</select> 
+				<br>
+				<label for="submit"></label> 
+				<input class="button" type="button" name="submit" onclick="register()" value="Submit" size="20">
+				<p id="error"></p>
+			</fieldset>
+		</form>
+
+	</div>
+</body>
+</html>

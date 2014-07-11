@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function checkUser() {
+		if(sessionStorage.getItem("userType") == null) {
+			var element = document.getElementById("homeLink");
+			
+			element.parentNode.removeChild(element);
+			}
+	}
+	
+	function logout() {
+		if(sessionStorage.getItem("userType") != null) {
+		sessionStorage.removeItem("userName");
+		sessionStorage.removeItem("userType");
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body onload="checkUser()">
+	<div id="logo">
+		<img src="Ericsson.png">
+	</div>
+
+	<div id="heading">
+		<h1>Error, you do not have permission to access this query</h1>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li id="homeLink"><a class="menulinks" href="javascript:void(0);"
+				onclick="window.location.replace(sessionStorage.getItem('userType') + 'Home.html'); return false;">Home</a></li>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="logout(); window.location.replace('index.html'); return false;">Login</a></li>
+		</ul>
+	</div>
+
+	<div id="mainbody">
+	</div>
+</body>
+</html>

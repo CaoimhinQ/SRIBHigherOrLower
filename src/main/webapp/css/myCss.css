@@ -1,0 +1,157 @@
+html
+{
+}
+
+body 
+{
+background-color:white;
+}
+
+#header
+{
+background-color:white;
+border-top-style:solid;
+border-top-width:thick;
+border-color: crimson;
+}
+
+
+#p1Div
+{
+float: left;
+	
+}
+
+#p2Div
+{
+float: right;	
+}
+
+#gameDiv
+{
+width: 50%;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#details
+{
+font-size:22;
+font-family:"Comic sans ms", Times, serif;
+color:RoyalBlue;
+border-color: black;
+}
+
+h1
+{
+font-family:"Comic sans ms", Times, serif;
+color:RoyalBlue;
+border-color: black;
+}
+
+h2
+{
+font-family:"Comic sans ms", Times, serif;
+color:black;
+border-color: black;
+}
+
+hr
+{
+background-color:white;
+}
+
+.menulinks
+{	
+color:#47484A;
+background:white;
+}
+
+ul li
+{
+list-style-type:none;
+}
+
+col
+{
+width:10%
+}
+
+tr
+{
+height:30px;
+text-align:top;
+}
+
+td
+{
+background-color:#FFFFFF;
+text-align:top;
+overflow: hidden;
+text-align:center;
+}
+
+table
+{
+min-width:400px;
+width:80%;
+table-layout:fixed;
+background-color:LightSkyBlue; 	
+	
+}
+
+tr.firstLine
+{
+	font-weight: bold;
+}
+
+#form{
+
+	position:fixed; 
+	top:20%; 
+	right: centre;
+
+    visibility:hidden;
+  /*  position:absolute; */
+    background:royalBlue;
+    border:2px solid #3c3c3c;
+    color:white;
+    z-index:100;
+    width: 250px;
+    height:120px;
+    padding:20px;
+	box-shadow: 15px 15px 7px #888888;	
+}
+
+form{
+	background-color:LightSkyBlue;
+}
+
+#loginForm{
+	width: 70%;
+}
+
+#registerForm{
+	width: 70%;
+}
+
+td:hover #listItem
+{
+background: royalBlue;
+}
+
+td.listItem:hover{
+background: royalBlue;	
+}

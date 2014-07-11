@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+	function logout() {
+		if(sessionStorage.getItem("userType") != null) {
+		sessionStorage.removeItem("userName");
+		sessionStorage.removeItem("userType");
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Please Log In</title>
+<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body>
+	<div id="logo">
+		
+	</div>
+
+	<div id="heading">
+		<h1>Please Log in at the homepage</h1>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="logout(); window.location.replace('index.html'); return false;">Login</a></li>
+		</ul>
+	</div>
+
+	<div id="mainbody">
+		
+	</div>
+</body>
+</html>

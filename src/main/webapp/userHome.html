@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/loginandregister.js"></script><meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/myCss.css">
+<title>To Do List</title>
+</head>
+<script>
+
+	function checkUser() {
+			var currentUserType = sessionStorage.getItem("userType");
+
+			if(currentUserType != "validUser") { 
+				location.replace("wrongUser.html");
+				} else {
+				}
+			}
+
+		function logout() {
+			sessionStorage.removeItem("userName");
+			sessionStorage.removeItem("userType");
+			window.location.replace("./index.html");
+		}
+
+		</script>
+<body onload="checkUser(); populateList();">
+
+	<div id="heading">
+		<h1>My To Do List</h1>
+		<hr>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li><a class="menulinks" href="javascript:void(0);"
+				onclick="logout(); window.location.replace('index.html'); return false;">Logout</a></li>
+		</ul>
+	</div>
+<hr>
+
+<div id="User Details">
+<p id="details">User Details go here</p>
+
+</div>
+<div id="List">
+	<input type="text" id="newItem" maxlength=40>
+	<button type="button" onclick="addItem();">Add Item</button>
+	<p id="tablespace"> List goes under here</p>
+	<p id="error"></p>
+
+</div>
+
+<div id="form" name = "form"><center>
+		
+		
+		<input id="lastPriority" hidden type="text" readonly>
+		<input id="priority" hidden type="text" readonly>
+		<input id="itemID"  hidden type="text" readonly><br>
+		
+		<label for="description" >Description</label><br>
+		<input id="description" name="description" type="text" title="description" maxlength=40>
+		
+			
+			<br>
+		<button id='editButton' type="button" 
+			onclick='edit()'>Edit</button>
+		<button id='deleteButton' type="button"
+			onclick='deleteItem()'>Delete</button>
+		<button id='closeButton' type="button"
+			onclick='resetFields()'>Close</button>	
+		<br>
+		
+	</div>
+
+</body>
+</html>

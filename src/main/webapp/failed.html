@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+		function checkUser() {
+			var currentUserType = sessionStorage.getItem("userType");
+
+			if(currentUserType != "sysAdmin") { 
+				location.replace("wrongUser.html");
+				} else {
+				}
+			}
+
+		function logout() {
+			sessionStorage.removeItem("userName");
+			sessionStorage.removeItem("userType");
+			window.location.replace("./index.html");
+		}		
+</script>
+<meta charset="UTF-8">
+<title>Failure</title>
+<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body onload="checkUser();">
+	<div id="logo">
+	</div>
+
+	<div id="heading">
+		<h1>UserName already Exists</h1>
+	</div>
+
+	<div id="menu">
+	</div>
+
+	<div id="mainbody">
+		<form action="index.html">
+			<label>A user with this name already exists in the database.</label><br>
+			<label>Please choose a unique username.</label><br><br>
+			<input type="submit" value="Continue" size="20" />
+		</form>
+	</div>
+</body>
+</html>
