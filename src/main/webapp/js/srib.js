@@ -156,6 +156,7 @@ function compute(num){
 	var scoreBox = document.getElementById("score");
 	var score = parseInt(scoreBox.value);
 	
+	
 	if(stat1>stat2){
 		answer = "lower";
 	}
@@ -168,15 +169,18 @@ function compute(num){
 	
 	if(num==1 && answer == "lower"){
 		result = "wrong";
+		updateHighScore(score);
+		scoreBox.value = "0";
 	}
 	else if(num==2 && answer == "higher"){
 		result = "wrong";
+		updateHighScore(score);
+		scoreBox.value = "0";
 	}
 	else{
-		alert("score was " + score);
 		score = score + 1;
 		scoreBox.value = score;
-		alert("score is " + score);
+		updateHighScore(score);
 	}
 	
 	alert(	name1+" : "+stat1+"\n"+
@@ -187,6 +191,16 @@ function compute(num){
 	
 }
 
+function updateHighScore(score){
+	
+	var highScoreBox = document.getElementById("highScore");
+	var highScore = parseInt(highScoreBox.value);
+	
+	if(score>highScore){
+		highScoreBox.value=score;
+	}
+	
+}
 
 function categoryChanged(){
 	loadPlayers();
