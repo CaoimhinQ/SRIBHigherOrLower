@@ -153,6 +153,9 @@ function compute(num){
 	var answer = "higher";
 	var result = "right";
 	
+	var scoreBox = document.getElementById("score");
+	var score = parseInt(scoreBox.value);
+	
 	if(stat1>stat2){
 		answer = "lower";
 	}
@@ -163,9 +166,17 @@ function compute(num){
 		answer = "equal";
 	}
 	
-	
 	if(num==1 && answer == "lower"){
 		result = "wrong";
+	}
+	else if(num==2 && answer == "higher"){
+		result = "wrong";
+	}
+	else{
+		alert("score was " + score);
+		score = score + 1;
+		scoreBox.value = score;
+		alert("score is " + score);
 	}
 	
 	alert(	name1+" : "+stat1+"\n"+
